@@ -6,10 +6,24 @@ export function Header() {
   return (
     <header id="header">
       <section className="header-top">
-        <div className="confine"></div>
+        <div className="confine">
+          {/* Icon Side */}
+          <div className="pheeicon">
+            <img src="/gif/pheeicon_speen.webp" alt="" className="main_speen" />
+            <img src="/gif/rainbow.webp" alt="" className="decor rainbow" />
+            <img src="/art/pheesekai_logo_y2k.png" className="decor y2klogo" />
+            <img src="/art/pheesekai_wordart.png" className="decor wordart" />
+          </div>
+
+          {/* Logo Side */}
+          <div className="pheelogo">
+            <img src="/art/pheesekai_logo.png" alt="" className="main_logo" />
+          </div>
+        </div>
       </section>
       <nav className="navigation">
         <div className="confine">
+          {/* Navigation Links */}
           <div className="links">
             <Link href={"/"}>
               <Button text="home" />
@@ -28,8 +42,18 @@ export function Header() {
             </Link>
           </div>
 
+          {/* Extra Nav Link */}
           <div className="extra-links">
-            <Link href={"/guestlist"}>Guestlist</Link>
+            <a href="https://www.cutercounter.com/" target="_blank">
+              <img
+                src="https://www.cutercounter.com/hits.php?id=hxonkno&nd=6&style=11"
+                alt="best free website hit counter"
+              />
+            </a>
+
+            <Link href={"/guestlist"}>
+              <img src={"/gif/guestbook.webp"} className={"guestbook"} />
+            </Link>
           </div>
         </div>
       </nav>

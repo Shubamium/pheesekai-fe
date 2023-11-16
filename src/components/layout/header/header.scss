@@ -7,9 +7,64 @@
 	}
 	.header-top{
 		min-height: 100px;
-		background: url('/background/rainbow_skull.png'),rgba(70, 20, 48, 0.521);
+		background: url('/background/rainbow_skull.png'),rgba(34, 14, 25, 0.61);
 		background-blend-mode: multiply;
 		background-size: 100px;
+		position: relative;
+		z-index: 100;
+		overflow: hidden;
+
+		.confine{
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.pheeicon{
+			position: relative;
+		}
+
+		.main_speen{
+			max-height: 100px;
+			scale: 1.8;
+			user-select: none;
+			pointer-events: none;
+		}
+
+		.main_logo{
+			max-height: 100px;
+			filter: drop-shadow(2px 4px rgba(0, 0, 0, 0.253));
+			animation: main_logo 4s infinite  linear;
+			animation-timing-function: steps(10);
+			position: relative;
+			z-index: 10;
+			pointer-events: none;
+			user-select: none;
+		}
+		
+		.decor{
+			position: absolute;
+			max-height: 100%;
+			user-select: none;
+			pointer-events: none;
+
+		}
+		.rainbow{
+			left: -30px;
+			opacity: 0.7;
+			z-index: -10;
+		}
+		.y2klogo{
+			left: -70px;
+			top: 15%;
+			scale: 1.5;
+			z-index: -8;
+		}
+		.wordart{
+			top: 80%;
+			left: 0px;
+			scale:3;
+			z-index: -12;
+		}
 	}
 
 	.navigation{
@@ -28,5 +83,35 @@
 			gap: .5em;
 			height: 100%;
 		}
+		.extra-links{
+			display: flex;
+			align-items: center;
+			justify-items: center;
+			padding-right: 1em;
+			gap: 1em;
+			.guestbook{
+				position: relative;
+				top: 2px;
+				height: 20px;
+				scale: 1.3;	
+				&:hover{
+					scale: 1.4;
+				}
+			}
+		}
 	}
+}
+
+@keyframes main_logo {
+		0%{
+			// filter: hue-rotate(0deg);
+			scale: 1.2;
+		}
+		50%{
+			scale: 1.4;
+		}
+		100%{
+			scale: 1.2;
+			// filter: hue-rotate(360deg);
+		}
 }
