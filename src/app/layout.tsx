@@ -4,6 +4,7 @@ import { DotGothic16, Inter } from "next/font/google";
 import { Header } from "@/components/layout/header/header";
 const dotGothic = DotGothic16({ weight: "400", subsets: ["latin"] });
 import { CSSProperties } from "react";
+import Footer from "@/components/layout/footer/footer";
 
 export const metadata: Metadata = {
   title: "Pheesekai | Vtuber | Content Creator",
@@ -24,6 +25,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
