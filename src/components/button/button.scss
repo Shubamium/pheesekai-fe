@@ -1,0 +1,31 @@
+.button{
+	background-color: #1D6C55;
+	border: 4px solid #219A77;
+	border-top-color:  #219A77;
+	border-left-color:#219A77;
+	border-right-color: #144235;
+	border-bottom-color:#144235;
+
+	color: white;
+	letter-spacing: 5px;
+	font-family: var(--main);
+	padding: 0 1.1em;
+	cursor: pointer;
+	font-size: 1rem;
+
+	p{
+		position: relative;
+		top:-2px;
+	}
+
+	font-weight: 300;
+	&:hover{
+		p{
+			color:#52FF00;
+			text-underline-offset: 3px;
+			text-decoration: underline;
+		}
+
+		scale: 1.05;
+	}
+}

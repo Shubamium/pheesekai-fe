@@ -1,15 +1,32 @@
 #header{
-	min-height: 150px;
 
+
+	.confine{
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 	.header-top{
 		min-height: 100px;
-		background: url('/background/rainbow_skull.png'),#42132e77;
+		background: url('/background/rainbow_skull.png'),rgba(70, 20, 48, 0.521);
 		background-blend-mode: multiply;
 		background-size: 100px;
 	}
 
 	.navigation{
-		background: white;
+		background: url('/background/phee_xo.png'),#42132e59;
+		background-blend-mode: multiply;
 		height: 100%;
+		padding: .25em;
+		background-size: 230px;
+		.confine{
+			display: flex;
+			justify-content: space-between;
+		}
+		.links{
+			display: flex;
+			align-items: center;
+			gap: .5em;
+			height: 100%;
+		}
 	}
 }
