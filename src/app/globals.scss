@@ -1,0 +1,27 @@
+/* CSS Reset */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--green: '#219A77';
+	--darkPurple: '#42132E';
+	--purple: '#B53B9D';
+}
+
+h2,p{
+	color: white;
+}
+
+body{
+	background: url('/background/checker.png');
+}
+
+main{
+	background: #42132E;
+	min-height: 210vh;
+	max-width: 1200px;
+	margin: 0 auto;
+}

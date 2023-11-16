@@ -1,0 +1,15 @@
+#header{
+	min-height: 150px;
+
+	.header-top{
+		min-height: 100px;
+		background: url('/background/rainbow_skull.png'),#42132e77;
+		background-blend-mode: multiply;
+		background-size: 100px;
+	}
+
+	.navigation{
+		background: white;
+		height: 100%;
+	}
+}
