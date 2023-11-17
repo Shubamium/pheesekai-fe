@@ -28,9 +28,25 @@ export function Header() {
             <Link href={"/"}>
               <Button text="home" />
             </Link>
-            <Link href={"/about"}>
+            <div className="extra-nav">
+              <input
+                type="checkbox"
+                name="nav-activate"
+                className="nav-activate"
+              />
               <Button text="about" />
-            </Link>
+              <div className="extra">
+                <Link href={"/setup"}>
+                  <Button text="setup" />
+                </Link>
+                <Link href={"/games"}>
+                  <Button text="games" />
+                </Link>
+                <Link href={"/credits"}>
+                  <Button text="credits" />
+                </Link>
+              </div>
+            </div>
             <Link href={"/artworks"}>
               <Button text="artworks" />
             </Link>

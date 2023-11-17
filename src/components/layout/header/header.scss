@@ -99,6 +99,45 @@
 				}
 			}
 		}
+
+		.extra-nav{
+			position: relative;
+			background-color: red;
+			z-index: 1000;
+			top: 0%;
+			.nav-activate{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: .01;
+				z-index: 100;
+				cursor: pointer;
+			}
+			.extra{
+				display: none;
+				position: absolute;
+				top: 100%;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+	.extra-nav{
+		&:hover, &:active{
+			.extra{
+				display: block !important;
+			}
+		}
+	}
+}
+@media screen and (max-width:768px){
+	
+	.nav-activate{
+		&:checked ~ .extra{
+			display: block !important;
+		}
 	}
 }
 
