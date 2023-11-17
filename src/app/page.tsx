@@ -49,7 +49,14 @@ export default function Home() {
       </section>
 
       <section className="schedule-section">
-        <SectionTitle title="Schedule" />
+        <SectionTitle title="schedule" />
+        <div className="schedule">
+          <img
+            src="/background/placeholder_schedule.png"
+            alt=""
+            className="schedule-img"
+          />
+        </div>
       </section>
     </main>
   );
