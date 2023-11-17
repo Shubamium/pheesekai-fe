@@ -1,12 +1,12 @@
 import SectionTitle from "@/components/sectionTitle/sectionTitle";
-import "./games.scss";
+import "./setup.scss";
 import { GiProcessor } from "react-icons/gi";
 import { BsGpuCard } from "react-icons/bs";
 import { FaMemory } from "react-icons/fa";
 import { BsFillMotherboardFill } from "react-icons/bs";
 export default function Games({}) {
   return (
-    <main id="container_games">
+    <main id="container_setup">
       <section className="setup-section">
         <SectionTitle
           title="setup"
@@ -87,6 +87,40 @@ export default function Games({}) {
           </div>
         </div>
       </section>
+			<section className="peripheral-section">
+				<img src="/art/section-title_peripherals.png" alt="" className="title" />
+
+				<div className="peripherals">
+						{/* PC */}
+						<Peripheral name="Akko Keyboard Kuromi 5108B Plus W/ Crystal Switches" image="https://en.akkogear.com/wp-content/uploads/2022/08/Kuromi-5108B-Plus-SP5.jpg"/>
+						<Peripheral name="Neewer NW-700 Condenser Microphone (Modded by ACEROLAVR)" image="https://images.reverb.com/image/upload/s--XOi3igLZ--/a_0/f_auto,t_large/v1685933791/vs3iczb9ydc52gympicc.jpg"/>
+						<Peripheral name="Presonus Audiobox USB Interface" image="https://pae-web.presonusmusic.com/uploads/products/mediabars/english/images/AudioBox-USB-8.jpg"/>
+						<Peripheral name="Logitech Webcam" image="https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/video-conferencing/c920e/c920e-og-image-new.jpg?v=1"/>
+
+						{/* Vive */}
+						<Peripheral name="Valve Index" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/HMD_3.jpg"/>
+						<Peripheral name="Valve Index Controllers" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/CTRL_4.jpg"/>
+						<Peripheral name="HTC Vive 3.0 Trackers (x3 for hips and each leg)" image="https://immersive-display.com/img/cms/Blog/self_tracking-tracker_htc_vive.png"/>
+						<Peripheral name="2.0 Base Stations (x3)" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/BS_3.jpg"/>
+				</div>
+			</section>
+
     </main>
   );
+}
+
+
+type PeripheralProps = {
+		image?:string,
+		name:string
+}
+const Peripheral = ({image,name}:PeripheralProps) => {
+	return <div className="peripheral">
+	<div className="image">
+		<img src={image} alt="" />
+	</div>
+	<div className="detail">
+		<h2>{name}</h2>
+	</div>
+</div>	
 }
