@@ -1,6 +1,7 @@
 import Button from "@/components/button/button";
 import "./home.scss";
 import Link from "next/link";
+import SectionTitle from "@/components/sectionTitle/sectionTitle";
 export default function Home() {
   return (
     <main id="container_home">
@@ -45,6 +46,10 @@ export default function Home() {
         <div className="hero-art">
           <img src="/art/phee-guitar.png" alt="" className="main-art" />
         </div>
+      </section>
+
+      <section className="schedule-section">
+        <SectionTitle title="Schedule" />
       </section>
     </main>
   );

@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <footer id="footer">
       <div className="left-side">
+        <img src="/gif/windows-start.gif" height={20} className="windows" />
         <a
           href="https://twitter.com/shubamium2"
           target="_blank"

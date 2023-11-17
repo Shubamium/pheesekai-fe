@@ -27,6 +27,12 @@
 		justify-content: center;
 		align-items: center;
 		gap: 1em;
+
+		.windows{
+			margin-right:-.5em;
+			margin-left: .25em;
+			scale: 1.25;
+		}
 		.credits{
 			padding: 0 .5em;
 			&:hover{
