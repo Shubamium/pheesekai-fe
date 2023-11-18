@@ -18,7 +18,8 @@ h2,p{
 
 body{
 	// image-rendering: pixelated;
-	background: url('/background/checker.png');
+	background: url('/background/checker.png'),rgba(0, 0, 0, 0.32);
+	background-blend-mode: multiply;
 	background-size: 50px;
 	font-smooth: never;
   -webkit-font-smoothing: none;
@@ -31,7 +32,8 @@ main{
 	min-height: 210vh;
 	max-width: 1200px;
 	margin: 0 auto;
-	background-color: #2C1727;
+	background-color: rgb(37, 20, 33);
+	background-blend-mode: multiply;
 	overflow: hidden;
 	position: relative;
 }
@@ -43,8 +45,9 @@ main::before{
 	width: 100%;
 	height: 100%;
 	top: 0%;
-	opacity: 0.07;
+	opacity: 0.06;
 	left: 0%;
 	user-select: none;
 	pointer-events: none;
 }
+
