@@ -1,0 +1,93 @@
+#container_showcase{
+	padding-top: 50px;
+	padding-bottom: 150px;
+	.model-previewer{
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 1em;
+		position: relative;
+		z-index: 100;
+		.model-list{
+			padding:1em;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: space-between;
+			.list{
+				display: flex;
+				flex-direction: column;
+				gap: 1.2em;
+				.button{
+					font-size: 1.2rem;
+				}
+			}
+			.decoration{
+				// background-color: red;
+				position: relative;
+				align-items: center;
+				.skull{
+					position: absolute;
+					scale: .35;
+					width: 100%;
+					bottom: -200%;
+					// z-index: -2;
+					// left: 30%;
+				}
+				.text{
+					width: 100%;
+					scale: .7;
+					object-fit: contain;
+					object-position: center;
+				}
+			}
+		}
+		.previewer{
+			// background: #B22A72;
+			border: 5px solid black;
+
+			.previewer-header{
+				display: flex;
+				align-items: center;
+				justify-content:space-between;
+				width: 100%;
+				padding: .5em;
+				background: url('/background/y2k3d.png'),rgba(0, 0, 0, 0.541);
+				background-blend-mode: multiply;
+				background-size: 500% 400%;
+				background-position: 0% 10%;
+				background-attachment: scroll;
+				h2{
+					font-size: 1.2rem;
+					color: #52FF00;
+					background-color: #51ff0068;
+					padding: .25em 1em;
+				}
+				img{
+					max-width: 100px;
+				}
+			}
+			.previewer-body{
+				.model-sheet{
+					img{
+						max-width: 100%;
+						border: 5px dashed #B22A72;
+					}
+				}
+				.model-detail{
+					display: flex;
+					align-items: center;
+					padding: .25em 1em;
+					background: url('/background/phee_xo.png'),rgba(0, 0, 0, 0.494);
+					background-blend-mode: multiply;
+					img{
+						max-width: 40px;
+					}
+					a{
+						color:white;
+					}
+				}
+			}
+		}
+		
+	}
+}
