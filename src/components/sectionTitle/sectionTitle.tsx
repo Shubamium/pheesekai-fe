@@ -15,7 +15,7 @@ export default function SectionTitle({
       <div className="section-title">
         <h2> - {title} -</h2>
       </div>
-      <div className="section-description">{description}</div>
+      {description && <div className="section-description">{description}</div>}
     </>
   );
 }
