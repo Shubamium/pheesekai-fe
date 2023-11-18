@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
+	z-index: 10;
 	padding-bottom: .2em;
 	background: url('/background/footer_rainbow.png'),rgba(0, 0, 0, 0.664) ;
 	background-size: 200px;
@@ -36,7 +36,8 @@
 		.credits{
 			padding: 0 .5em;
 			&:hover{
-				color: rgb(235, 38, 235);
+				color: #52FF00;
+				
 			}
 			
 		}
@@ -56,6 +57,7 @@
 			img{
 				max-height: 100%;
 				object-fit: contain;
+				
 			}
 		}
 	}

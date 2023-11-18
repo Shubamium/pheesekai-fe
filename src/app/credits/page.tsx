@@ -1,16 +1,12 @@
 import SectionTitle from "@/components/sectionTitle/sectionTitle";
 import './credits.scss'
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import CreditHeader from "@/components/creditHeader/creditHeader";
 export default function Credits() {
 	return (
 		<main id="container_credits">
-			<section className="credit-header">
-					<div className="header-art">
-						<img src="/gif/cheer_emote.gif" alt="" className="emote" />
-						<img src="/art/pheesekai_logo.png" alt="" className="logo"/>
-					</div>
-					<SectionTitle title="credits" description="Some text about the people here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-			</section>
+			<CreditHeader/>
+			<SectionTitle title="credits" description="Some text about the people here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
 			<section className="credit-list">
 				<Credit handle="@person_name" link="" pfp="/gif/cheer_emote.gif" role="Position Name"/>
 				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>

@@ -1,0 +1,22 @@
+.credit-header{
+	.header-art{
+		display: flex;
+		justify-content: center;
+		position: relative;
+		.emote{
+			max-width: 200px;
+			max-height: 200px;
+			margin: 0 auto;
+			background: url('/background/phee_xo.png');
+			border-radius: 50%;
+			border: 5px solid #B53B9D;
+			box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.533);
+			margin: 2em;
+		}
+		.logo{
+			position: absolute;
+			max-width: 300px;	
+			bottom: 0%;
+		}
+	}
+}
