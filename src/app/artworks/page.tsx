@@ -24,7 +24,7 @@ export default function Artworks() {
 
 
 
-type contactType = 'twitter' | 'youtube' | 'discord ' | 'vgen' | 'kofi' | 'website';
+type contactType = 'twitter' | 'youtube' | 'discord' | 'vgen' | 'kofi' | 'website';
 type ArtworkDisplayerProps = {
 	art:string;
 	artist:{
@@ -42,6 +42,7 @@ const contactIcon = {
  	'youtube':'/icon/youtube.png',
 	'discord': '/icon/discord.png',  
 	'vgen': '/icon/vgen.png',  
+	'kofi': '/icon/kofi.png',  
 	'website': '/icon/website.png',  
 }
 function ArtworkDisplayer(props:ArtworkDisplayerProps){
