@@ -67,7 +67,7 @@ export function Header() {
               />
             </a>
 
-            <Link href={"/guestlist"}>
+            <Link href={"/contacts#guestbook"}>
               <img src={"/gif/guestbook.webp"} className={"guestbook"} />
             </Link>
           </div>
