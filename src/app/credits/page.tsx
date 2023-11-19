@@ -29,7 +29,7 @@ export default function Credits() {
 							<div className="details">
 								<h2 className="name">Tessa</h2>
 								<p className="handle"><a href="https://twitter.com/tessa_vt">@tessa_vt</a> <BsArrowRight/> <a href="https://vgen.co/tessa_vt">VGEN</a> </p>
-								<p className="bio">3 years and counting serving VTubers as a manager and Creative Director with excellence by doing the following: Content/Data Analysis, Brand Review, Personalized Marketing Strategies, Sales/Merch Strategies, Project Management, Talent Management, Business Development, Debut Management, Lore Creation & more!</p>
+								<p className="bio">Tessa has been managing Phee for 3 months. She is a quick-witted and understanding manager who has worked with many talents and addressed a variety of needs, from event management to debut planning, to leading growth in content creation. For business inquiries, Tessa can be reached through her Twitter or e-mail.</p>
 								<div className="socials">
 									<a href="https://twitter.com/tessa_vt"><img src="/icon/twitter.png"/></a>
 									<a href="https://www.twitch.tv/tessavillaverde"><img src="/icon/twitch.png"/></a>

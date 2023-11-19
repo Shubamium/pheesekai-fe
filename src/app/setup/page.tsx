@@ -117,7 +117,8 @@ type PeripheralProps = {
 const Peripheral = ({image,name}:PeripheralProps) => {
 	return <div className="peripheral">
 	<div className="image">
-		<img src={image} alt="" />
+		<img src={image} alt="" className="periph-img"/>
+		<img src="/art/phee_icon.png" alt="" className="decor" />
 	</div>
 	<div className="detail">
 		<h2>{name}</h2>
