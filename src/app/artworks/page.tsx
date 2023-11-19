@@ -24,7 +24,7 @@ export default function Artworks() {
 
 
 
-type contactType = 'twitter' | 'youtube ' | 'discord ' | 'vgen' | 'kofi' | 'website';
+type contactType = 'twitter' | 'youtube' | 'discord ' | 'vgen' | 'kofi' | 'website';
 type ArtworkDisplayerProps = {
 	art:string;
 	artist:{
