@@ -6,11 +6,36 @@ const dotGothic = DotGothic16({ weight: "400", subsets: ["latin"] });
 import { CSSProperties } from "react";
 import Footer from "@/components/layout/footer/footer";
 
+
+const title = "Pheesekai | Vtuber | Content Creator"
+
+const description = "Pheesekai is a Y2K, scene-inspired vtuber and content creator who streams weekly on Twitch. They often stream crafts, art, open world survival crafting games, and first person shooters. Check out what's happening with Phee!"
+const banner = 'https://i.ibb.co/7pVBzfT/MIlIf-u8.jpg'
+
 export const metadata: Metadata = {
-  title: "Pheesekai | Vtuber | Content Creator",
-  description:
-    "Pheesekai is a Y2K, scene-inspired vtuber and content creator who streams weekly on Twitch. They often stream crafts, art, open world survival crafting games, and first person shooters. Check out what's happening with Phee!",
-};
+	title: title,
+
+	metadataBase: new URL('https://pheesekai.com'),
+
+	openGraph:{
+		url:'https://pheesekai.com',
+		title:title,
+		description:description,
+		authors:"shubamium",
+		images:[
+			banner
+		]
+	},
+		twitter:{
+		title:title,
+		card:'summary_large_image',
+		images:[
+			banner
+		]
+	},
+	description: description
+}
+
 
 export default function RootLayout({
   children,
