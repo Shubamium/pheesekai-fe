@@ -14,6 +14,26 @@ export default function Credits() {
 				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
 				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
 				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+			</section>
+
+
+			<section className="mods-section">
+				<SectionTitle title="meet the mods" description="Meet the lovely mods that help keep this channel running! Each person has greatly aided in helping the channel grow, and deserves a lil' recognition!"/>
+				<div className="mods-list">
+					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="https://google.com" about="A little description aboutiption about iption about iption about  them"/>
+					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="google.com" about="A little description aboutiption about iption about iption about  them"/>
+					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="/" about="A little description aboutiption about iption about iption about  them"/>
+					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="/" about="A little description aboutiption about iption about iption about  them"/>
+					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="/" about="A little description about them"/>
+				</div>
 			</section>
 
 			<section className="management-info">
@@ -59,4 +79,22 @@ function Credit({handle,role,link,pfp}:CreditProps){
 		<p>{role}</p>
 	</div>
 </a>
+}
+
+type ModsProps = {
+	pfp:string,
+	name:string,
+	link:string,
+	about:string,
+}
+function Mods({pfp,name,link,about}:ModsProps){
+	return <a href={link} target="_blank" className="mods">
+			<div className="pfp-part">
+				<img src={pfp} alt="" />
+			</div>
+			<div className="details-part">
+				<h2 className="name">{name}</h2>
+				<p className="about">{about}</p>
+			</div>
+	</a>
 }

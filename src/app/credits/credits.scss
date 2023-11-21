@@ -1,12 +1,13 @@
 #container_credits{
 
-	
+	padding-bottom: 200px;
 	.credit-list{
 		display: flex;
 		justify-content: center;
-		gap: 2em;
+		gap: 2em 1.5em;
 		padding: 2em;
 		flex-wrap: wrap;
+		padding-bottom: 200px;
 
 		&:hover{
 			.credit:not(:hover){
@@ -18,13 +19,13 @@
 			z-index: 0;
 			text-decoration: none;
 			filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.385));
-			transition: all 100ms ease;
+			transition: all 500ms ease;
 			&:hover{
 				scale: 1;
-				transform: translateY(-10%);
+				transform: translateY(-5%);
 				.details{
 					h2{
-						font-weight: bold;
+						color: #52FF00;
 					}
 				}
 			}
@@ -61,6 +62,58 @@
 		}
 	}
 
+	.mods-list{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 2em 5em;
+		gap: 2em;
+		position: relative;
+		z-index: 0;
+		.mods{
+			display: grid;
+			grid-template-columns: 100px 1fr;
+			background: url('/background/starskul.png'),rgba(0, 0, 0, 0.368);
+			background-blend-mode: multiply;
+			text-decoration: none;
+			box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.8);
+
+			transition: all 100ms ease;
+			outline: 2px dotted #51ff0061;
+			&:hover{
+				scale: 1.05;
+				outline: 2px dotted #52FF00;
+			}
+			.pfp-part{
+				background-color: #204E4B;
+				padding: .3em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img{
+					border: 3px solid black;
+					width: 100%;
+					// height: 100%;
+					width: 80px;
+					height: 80px;
+					aspect-ratio: 1/1;
+					align-items: center;
+					object-fit: cover;
+					border-radius: 50%;
+				}
+			}
+
+			.details-part{
+				padding: 1em;
+
+				.name{
+					color: #52FF00;
+				}
+				.about{
+					font-size: .9rem;
+				}
+			}
+		}
+	}
 	.management-info{
 		padding-top: 200px;
 		.window{
