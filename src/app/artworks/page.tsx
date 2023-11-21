@@ -7,7 +7,7 @@ export default function Artworks() {
 	return (
 		<main id='container_artworks'>
 				<CreditHeader/>
-				<SectionTitle title='artworks' description='Some text about the art here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'/>
+				<SectionTitle title='artworks' description="If you're interested in any of the artworks that have been used on my socials, you can find everything listed here! Make sure to send plenty of love over to my artists, because they all worked super hard!"/>
 				
 				<section className='artwork-list'>
 						<ArtworkDisplayer art='https://pbs.twimg.com/media/F_AqpuKW8AA43tH?format=jpg&name=4096x4096' artist={{name:'@ArtistName', url:'https://artistwebsite.com'}} contacts={new Array(4).fill({type:'twitter',url:'https://twitter.com'})}/>

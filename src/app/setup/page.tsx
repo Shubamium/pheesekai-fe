@@ -10,8 +10,7 @@ export default function Games({}) {
       <section className="setup-section">
         <SectionTitle
           title="setup"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description=" Listed here are the hardware and software used to help make this channel possible! If you're curious about something listed here, please feel free to ask me in my discord server, or the next time I stream!"
         />
 
         <div className="setup">

@@ -35,7 +35,7 @@ export default function Contacts() {
 				</div>
 			</section>
 
-			<SectionTitle title='guestbook' description='Sample text here, something encouraging people to sign it themself maybe?'/>
+			<SectionTitle title='guestbook' description="Thanks for stopping by my site! I hope you enjoyed your stay! If you want to leave a little message for me, please sign my guestbook. Just make sure to keep it appropriate and kind!"/>
 			<section id='guestbook' className='guestbook'>
 				<Guest messages="Hi Phee, Thank you so much for trusting me to make this site. I hope you're satisfied with the result! :)" username='Shubamium' email='shubamium@gmail.com' visitedDate={new Date()}/>
 				<Guest messages='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iste dolore consequuntur voluptatum aliquid soluta nihil quibusdam iure quisquam, ducimus awdad .' username='Phee' email='pheevtuber@gmail.com' visitedDate={new Date()}/>
