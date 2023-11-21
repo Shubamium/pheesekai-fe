@@ -183,6 +183,7 @@
 						font-size: .8rem;
 						letter-spacing: 2px;
 						margin: 1em 0;
+						opacity: .8;
 					}
 					.socials{
 						display: flex;
@@ -192,6 +193,13 @@
 						}
 						a:hover{
 							scale: 1.2;
+						}
+					}
+					.contact-email{
+						color: #b9ffbe;
+						text-decoration: none;
+						&:hover{
+							text-decoration: underline;
 						}
 					}
 				}

@@ -2,11 +2,12 @@ import SectionTitle from "@/components/sectionTitle/sectionTitle";
 import './credits.scss'
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import CreditHeader from "@/components/creditHeader/creditHeader";
+import { GiMailbox } from "react-icons/gi";
 export default function Credits() {
 	return (
 		<main id="container_credits">
 			<CreditHeader/>
-			<SectionTitle title="credits" description="Some text about the people here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+			<SectionTitle title="credits" description="Check out the people behind the magic! Listed are everyone who helped make assets, models, or music for the channel. Feel free to check out their other work through their socials!"/>
 			<section className="credit-list">
 				<Credit handle="@person_name" link="" pfp="/gif/cheer_emote.gif" role="Position Name"/>
 				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
@@ -49,6 +50,7 @@ export default function Credits() {
 							<div className="details">
 								<h2 className="name">Tessa</h2>
 								<p className="handle"><a href="https://twitter.com/tessa_vt">@tessa_vt</a> <BsArrowRight/> <a href="https://vgen.co/tessa_vt">VGEN</a> </p>
+								<a className="contact-email" href="mailto:tessavillaverde@evergreenproject.io"> <GiMailbox/> tessavillaverde@evergreenproject.io</a>
 								<p className="bio">Tessa has been managing Phee for 3 months. She is a quick-witted and understanding manager who has worked with many talents and addressed a variety of needs, from event management to debut planning, to leading growth in content creation. For business inquiries, Tessa can be reached through her Twitter or e-mail.</p>
 								<div className="socials">
 									<a href="https://twitter.com/tessa_vt"><img src="/icon/twitter.png"/></a>

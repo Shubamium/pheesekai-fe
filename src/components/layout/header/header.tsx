@@ -56,6 +56,9 @@ export function Header() {
             <Link href={"/contacts"}>
               <Button text="contacts" />
             </Link>
+						<Link href={"/media"}>
+              <Button text="media" />
+            </Link>
           </div>
 
           {/* Extra Nav Link */}
