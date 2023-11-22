@@ -3,37 +3,85 @@ import './credits.scss'
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import CreditHeader from "@/components/creditHeader/creditHeader";
 import { GiMailbox } from "react-icons/gi";
-export default function Credits() {
+import { fetchData, urlFor } from "@/db/client";
+
+type CreditServer = {
+  _type: 'document';
+  _id?: string;
+  _rev?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  name: string;
+  position: string;
+  link: string;
+  pfp: {
+    _type: 'image';
+  }
+}
+
+type ModServer = {
+  _type: 'document';
+  _id?: string;
+  _rev?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  name: string;
+  about: string;
+  link: string;
+  pfp: {
+    _type: 'image';
+  };
+};
+export default async function Credits() {
+
+	const creditData = await fetchData<CreditServer[]>(`
+		*[_type == 'credits'] | order(_createdAt desc) {
+			_id,
+			_createdAt,
+			_updatedAt,
+			name,
+			position,
+			link,
+			pfp
+		}
+	`)
+
+	const modData = await fetchData<ModServer[]>(`
+		*[_type == 'mods'] | order(_createdAt desc) {
+			_id,
+			_createdAt,
+			_updatedAt,
+			name,
+			about,
+			link,
+			pfp
+		}
+	`);
+	
 	return (
 		<main id="container_credits">
 			<CreditHeader/>
 			<SectionTitle title="credits" description="Check out the people behind the magic! Listed are everyone who helped make assets, models, or music for the channel. Feel free to check out their other work through their socials!"/>
 			<section className="credit-list">
-				<Credit handle="@person_name" link="" pfp="/gif/cheer_emote.gif" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
-				<Credit handle="@person_name" link="/" pfp="" role="Position Name"/>
+
+				{creditData?.map((person)=>{
+					return ( 
+						<Credit handle={person.name} pfp={urlFor(person.pfp).url()} role={person.position} key={person._id}/>
+					)
+				})}
+			
 			</section>
 
 
 			<section className="mods-section">
 				<SectionTitle title="meet the mods" description="Meet the lovely mods that help keep this channel running! Each person has greatly aided in helping the channel grow, and deserves a lil' recognition!"/>
 				<div className="mods-list">
-					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="https://google.com" about="A little description aboutiption about iption about iption about  them"/>
-					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="google.com" about="A little description aboutiption about iption about iption about  them"/>
-					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="/" about="A little description aboutiption about iption about iption about  them"/>
-					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="/" about="A little description aboutiption about iption about iption about  them"/>
-					<Mods pfp="/gif/cheer_emote.gif" name="Mods Name" link="/" about="A little description about them"/>
+
+					{
+						modData?.map((mod)=>{
+							return <Mods pfp={urlFor(mod.pfp).url()} about={mod.about} link={mod.link} name={mod.name} key={mod._id}/>
+						})
+					}
 				</div>
 			</section>
 
