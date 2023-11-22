@@ -70,6 +70,7 @@ export default async function Games({}: Props) {
 		})
 		return {lessCommonList:less,frequentlyList:freq}
 	})()
+	
 	const {progress,completed} = (() => {
 		const progress:GameStatusServer[] = []
 		const completed:GameStatusServer[] = []
