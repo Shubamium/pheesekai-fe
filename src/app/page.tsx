@@ -2,7 +2,51 @@ import Button from "@/components/button/button";
 import "./home.scss";
 import Link from "next/link";
 import SectionTitle from "@/components/sectionTitle/sectionTitle";
-export default function Home() {
+import { fetchData, urlFor } from "@/db/client";
+
+type GeneralServer = {
+  _type: 'document';
+  _id?: string;
+  _rev?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  preset?: string;
+  schedules?: {
+    _type: 'image';
+  };
+  stats?: {
+    _type: 'object';
+    avg: string;
+    peak: string;
+    twitter: string;
+    tiktok: string;
+    twitch: string;
+    youtube: string;
+  };
+};
+
+
+export default async function Home() {
+
+	const generalData = await fetchData<GeneralServer[]>(`
+		*[_type == 'general' && preset == 'main'] {
+			_id,
+			_createdAt,
+			_updatedAt,
+			preset,
+			schedules,
+			stats {
+				avg,
+				peak,
+				twitter,
+				tiktok,
+				twitch,
+				youtube
+			}
+		}
+	
+	`);
+	console.log(generalData)
   return (
     <main id="container_home">
       <section className="hero-section">
@@ -52,7 +96,7 @@ export default function Home() {
         <SectionTitle title="schedule" />
         <div className="schedule">
           <img
-            src="/background/placeholder_schedule.png"
+            src={generalData[0].schedules ? urlFor(generalData[0].schedules).url()   : "/background/placeholder_schedule.png"}
             alt=""
             className="schedule-img"
           />

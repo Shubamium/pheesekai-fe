@@ -1,34 +1,79 @@
 import SectionTitle from '@/components/sectionTitle/sectionTitle'
 import './games.scss'
 import { ReactNode } from 'react'
+import { fetchData, urlFor } from '@/db/client'
 type Props = {}
 
-export default function Games({}: Props) {
+type GameListServer = {
+  _type: 'document';
+  _id?: string;
+  _rev?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  name: string;
+  poster: {
+    _type: 'image';
+  };
+  type: 'frequent' | 'less';
+};
+
+export default async function Games({}: Props) {
+	const gameListData = await fetchData<GameListServer[]>(
+		`
+		*[_type == 'games'] | order(_createdAt desc) {
+			_id,
+			_createdAt,
+			_updatedAt,
+			name,
+			poster,
+			type
+		}
+			
+		`
+	);
+
+	console.log(gameListData)
+	const {lessCommonList,frequentlyList} = (() => {
+		const less:GameListServer[] = []
+		const freq:GameListServer[] = []
+	
+		gameListData.forEach((game)=>{
+			if(game.type === 'less'){	
+				less.push(game)
+			}else{
+				freq.push(game)
+			}
+	
+		})
+		return {lessCommonList:less,frequentlyList:freq}
+	})()
 	return (
 		<main id='container_games'>
 				<SectionTitle title='games'/>
 				<section className="game-list fp">
 					<img src="/art/section_title-fp.png" alt="" />
 					<div className="list">
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
+					{frequentlyList && frequentlyList.length !== 0 && (
+							frequentlyList.map((game:GameListServer) => (
+									<GameDisplayer name={game.name} image={urlFor(game.poster).url()} key={game._id}/>
+							))
+						)}
+						{frequentlyList.length === 0 && (
+							<p>No games at the moment, Please check back another time!</p>
+						)}
 					</div>
 				</section>
 				<section className="game-list lc">
 					<img src="/art/section-title_lc.png" alt="" />
 					<div className="list">
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
-						<GameDisplayer image='https://m.media-amazon.com/images/I/71LTpSLz57L.jpg' name='Valorant '/>
+						{lessCommonList && lessCommonList.length !== 0 && (
+							lessCommonList.map((game:GameListServer) => (
+									<GameDisplayer name={game.name} image={urlFor(game.poster).url()} key={game._id}/>
+							))
+						)}
+					{lessCommonList.length === 0 && (
+							<p>No games at the moment, Please check back another time!</p>
+						)}
 					</div>
 				</section>
 

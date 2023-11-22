@@ -19,7 +19,7 @@
 				background-size: 200px;
 				box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.506);
 				&:hover{
-					transition: all 0s ease ;
+					transition: all 100ms ease ;
 					scale: 1.05;
 				}
 				.poster{
@@ -28,7 +28,7 @@
 					object-fit: cover;
 					aspect-ratio: 3/4;
 					padding: .2em;
-
+					background-color: black;
 					
 				}
 
