@@ -17,6 +17,17 @@ type GameListServer = {
   type: 'frequent' | 'less';
 };
 
+type GameStatusServer = {
+  _type: 'document';
+  _id?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  name: string;
+  progress: string;
+  type: 'progress' | 'completed';
+};
+
+
 export default async function Games({}: Props) {
 	const gameListData = await fetchData<GameListServer[]>(
 		`
@@ -32,7 +43,19 @@ export default async function Games({}: Props) {
 		`
 	);
 
-	console.log(gameListData)
+	const gameStatusData = await fetchData<GameStatusServer[]>(
+		`
+		*[_type == 'games_status'] | order(_updatedAt desc) {
+			_id,
+			_createdAt,
+			_updatedAt,
+			name,
+			progress,
+			type
+		}
+		`
+	)
+
 	const {lessCommonList,frequentlyList} = (() => {
 		const less:GameListServer[] = []
 		const freq:GameListServer[] = []
@@ -47,6 +70,22 @@ export default async function Games({}: Props) {
 		})
 		return {lessCommonList:less,frequentlyList:freq}
 	})()
+	const {progress,completed} = (() => {
+		const progress:GameStatusServer[] = []
+		const completed:GameStatusServer[] = []
+	
+		gameStatusData.forEach((game)=>{
+			if(game.type === 'progress'){	
+				progress.push(game)
+			}else{
+				completed.push(game)
+			}
+	
+		})
+		return {completed,progress}
+	})()
+
+	
 	return (
 		<main id='container_games'>
 				<SectionTitle title='games'/>
@@ -80,8 +119,10 @@ export default async function Games({}: Props) {
 				<div className="game-status">
 					<SectionTitle title='status'/>
 					<div className="status-layout">
-							<ProgressList title='In Progress' games={new Array(5).fill({name:'Cult of The Lamb',progress:'0%'})}/>
-							<ProgressList title='Completed' games={new Array(3).fill({name:'Cult of The Lamb',progress:'100%'})}/>
+							<ProgressList title='In Progress' games={progress.map((game)=>{ return {name:game.name,progress:game.progress}})}/>
+							<ProgressList title='Completed' games={completed.map((game)=>{ return {name:game.name,progress:game.progress}})}/>
+
+						
 					</div>
 				</div>
 		</main>

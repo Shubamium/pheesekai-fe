@@ -77,8 +77,9 @@
 
 				.items{
 					height: 400px;
-					overflow-y: auto;
+					overflow-y: scroll;
 					// padding: .4em;
+					padding-bottom: 80%;
 					.item{
 						transition: all 150ms steps(10);
 						padding: .5em;
