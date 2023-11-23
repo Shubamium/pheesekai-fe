@@ -6,7 +6,7 @@ export default function Contacts() {
 	return (
 		<main id='container_contacts'>
 
-			<section className="contacts">
+			<form className="contacts" action={"https://formspree.io/f/mayggwwd"} method='POST'>
 				<div className="art-part">
 						<img src="/art/contact-phee.png" alt="" className='main-art' />
 						<div className="details">
@@ -19,21 +19,21 @@ export default function Contacts() {
 							<img src="/art/contact-y2k.png" alt="" className='title' />
 							<div className="actions">
 								<Button text='Sign My Guestbook →'/>
-								<Button text='Send To Me →'/>
+								<Button text='Send To Me →' type="submit"/>
 							</div>
 						</div>
 
 						<div className="contact-form">
 							<div className="self-info">
-								<input type="text" name="name" id="name" placeholder='Name:' className='input-1' />
-								<input type="text" name="email" id="email" placeholder='Email:' className='input-1' />
+								<input type="text" name="Name" id="Name" placeholder='Name:' className='input-1' required/>
+								<input type="text" name="Email" id="Email" placeholder='Email:' className='input-1' />
 							</div>
-							<textarea placeholder='Write your messages here!' className='messages'/>
+							<textarea placeholder='Write your messages here!' className='messages' name='Messages' id='Messages' required/>
 							<img src="/gif/arturito-clear.gif" alt="" className='decor-pengu' />
 						</div>
 
 				</div>
-			</section>
+			</form>
 
 			<SectionTitle title='guestbook' description="Thanks for stopping by my site! I hope you enjoyed your stay! If you want to leave a little message for me, please sign my guestbook. Just make sure to keep it appropriate and kind!"/>
 			<section id='guestbook' className='guestbook'>
@@ -41,6 +41,18 @@ export default function Contacts() {
 				<Guest messages='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iste dolore consequuntur voluptatum aliquid soluta nihil quibusdam iure quisquam, ducimus awdad .' username='Phee' email='pheevtuber@gmail.com' visitedDate={new Date()}/>
 				<Guest messages='Messages of the guest... Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iste dolore consequuntur voluptatum aliquid soluta nihil quibusdam iure quisquam, ducimus fugiat voluptates veniam omnis blanditiis dolor laborum veritatis, nostrum quasi molestias id voluptatem error ipsa qui. Pariatur ut earum quibusdam? Obcaecati consequatur optio, alias ut qui, aliquam fuga ducimus enim dignissimos nostrum unde facilis odit itaque ipsa atque minima eaque incidunt! Quis, tempore tempora maiores a officia nam aperiam excepturi totam aliquam sunt laborum asperiores qui enim, consequatur numquam quidem quos. Inventore, tenetur. Molestiae itaque possimus magnam porro ab corporis saepe enim quisquam aperiam est. Facilis necessitatibus dicta consequuntur at pariatur numquam ipsum ex vel accusamus. Distinctio illo minus, rem pariatur iure praesentium repellat vitae aut voluptatibus doloremque similique quod.' username='Phee' email='pheevtuber@gmail.com' visitedDate={new Date()}/>
 			</section>
+
+
+			<form action="https://formspree.io/f/mayggwwd" method="post" >
+				<label htmlFor="fname">First name:</label><br/>
+				<input type="text" id="fname" name="fname" value="John"/><br/>
+				<label htmlFor="lname">Last name:</label><br/>
+				<input type="text" id="lname" name="lname" value="Doe"/><br/><br/>
+				<input type="submit" value="Submit"/>
+			</form> 
+
+
+
 		</main>
 	)
 }
