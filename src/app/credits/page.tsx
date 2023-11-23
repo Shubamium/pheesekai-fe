@@ -66,7 +66,7 @@ export default async function Credits() {
 
 				{creditData?.map((person)=>{
 					return ( 
-						<Credit handle={person.name} pfp={urlFor(person.pfp).url()} role={person.position} key={person._id}/>
+						<Credit handle={person.name} pfp={urlFor(person.pfp).url()} role={person.position} link={person.link} key={person._id}/>
 					)
 				})}
 			
@@ -101,9 +101,9 @@ export default async function Credits() {
 								<a className="contact-email" href="mailto:tessavillaverde@evergreenproject.io"> <GiMailbox/> tessavillaverde@evergreenproject.io</a>
 								<p className="bio">Tessa has been managing Phee for 3 months. She is a quick-witted and understanding manager who has worked with many talents and addressed a variety of needs, from event management to debut planning, to leading growth in content creation. For business inquiries, Tessa can be reached through her Twitter or e-mail.</p>
 								<div className="socials">
-									<a href="https://twitter.com/tessa_vt"><img src="/icon/twitter.png"/></a>
-									<a href="https://www.twitch.tv/tessavillaverde"><img src="/icon/twitch.png"/></a>
-									<a href="https://discord.com/invite/GN5nprTpvF"><img src="/icon/discord.png"/></a>
+									<a target="_blank" href="https://twitter.com/tessa_vt"><img src="/icon/twitter.png"/></a>
+									<a target="_blank" href="https://www.twitch.tv/tessavillaverde"><img src="/icon/twitch.png"/></a>
+									<a target="_blank" href="https://discord.com/invite/GN5nprTpvF"><img src="/icon/discord.png"/></a>
 								</div>
 							</div>
 						</div>
