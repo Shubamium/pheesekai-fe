@@ -47,7 +47,7 @@ export default function ShowcaseClient({showcase}: Props) {
 					</div>
 					<div className="model-detail">
 						<img src="/gif/PheeAlert.gif" alt="" />
-						<a href="#">@Artist-Name</a>
+						<a href="#">{showcase.list[active].credit}</a>
 					</div>
 				</div>
 		</div>

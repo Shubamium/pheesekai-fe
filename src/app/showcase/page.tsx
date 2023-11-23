@@ -19,6 +19,7 @@ export type ShowcaseServer = {
     art?: {
       _type: 'image';
     };
+		credit?:string
     video_id?: string;
   }>;
 };
