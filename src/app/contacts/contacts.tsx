@@ -19,7 +19,7 @@ export default function ContactClient() {
 				message:formData.get('Messages'),
 			}
 
-			window.alert('Submitting Guestlist..., Please hold wait')
+			window.alert('Submitting Guestlist..., Please wait a moment!')
 
 			mutateData('guestbook',newGuestbook).then((doc)=>{
 				if(doc){
