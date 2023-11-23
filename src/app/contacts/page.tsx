@@ -42,17 +42,6 @@ export default function Contacts() {
 				<Guest messages='Messages of the guest... Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis iste dolore consequuntur voluptatum aliquid soluta nihil quibusdam iure quisquam, ducimus fugiat voluptates veniam omnis blanditiis dolor laborum veritatis, nostrum quasi molestias id voluptatem error ipsa qui. Pariatur ut earum quibusdam? Obcaecati consequatur optio, alias ut qui, aliquam fuga ducimus enim dignissimos nostrum unde facilis odit itaque ipsa atque minima eaque incidunt! Quis, tempore tempora maiores a officia nam aperiam excepturi totam aliquam sunt laborum asperiores qui enim, consequatur numquam quidem quos. Inventore, tenetur. Molestiae itaque possimus magnam porro ab corporis saepe enim quisquam aperiam est. Facilis necessitatibus dicta consequuntur at pariatur numquam ipsum ex vel accusamus. Distinctio illo minus, rem pariatur iure praesentium repellat vitae aut voluptatibus doloremque similique quod.' username='Phee' email='pheevtuber@gmail.com' visitedDate={new Date()}/>
 			</section>
 
-
-			<form action="https://formspree.io/f/mayggwwd" method="post" >
-				<label htmlFor="fname">First name:</label><br/>
-				<input type="text" id="fname" name="fname" value="John"/><br/>
-				<label htmlFor="lname">Last name:</label><br/>
-				<input type="text" id="lname" name="lname" value="Doe"/><br/><br/>
-				<input type="submit" value="Submit"/>
-			</form> 
-
-
-
 		</main>
 	)
 }
