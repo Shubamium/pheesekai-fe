@@ -1,6 +1,5 @@
 import React from 'react'
 import './contacts.scss'
-import Button from '@/components/button/button'
 import SectionTitle from '@/components/sectionTitle/sectionTitle'
 import { fetchData } from '@/db/client'
 import dayjs from 'dayjs'

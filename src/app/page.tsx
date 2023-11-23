@@ -4,7 +4,7 @@ import Link from "next/link";
 import SectionTitle from "@/components/sectionTitle/sectionTitle";
 import { fetchData, urlFor } from "@/db/client";
 
-type GeneralServer = {
+export type GeneralServer = {
   _type: 'document';
   _id?: string;
   _rev?: string;
