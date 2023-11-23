@@ -1,6 +1,27 @@
+import { fetchData } from '@/db/client';
+import { GeneralServer } from '../page';
 import './media.scss'
 
-export default function Media() {
+export default async function Media() {
+	const generalData = await fetchData<GeneralServer[]>(`
+		*[_type == 'general' && preset == 'main'] {
+			_id,
+			_createdAt,
+			_updatedAt,
+			preset,
+			schedules,
+			stats {
+				avg,
+				peak,
+				twitter,
+				tiktok,
+				twitch,
+				youtube
+			}
+		}
+	
+	`);
+	const stats = generalData[0].stats
 	return (
 		<main id="container_media">
 			<section className="media-about">
@@ -36,33 +57,33 @@ export default function Media() {
 							<div className="ccv-list">
 								<div className="ccv avg">
 										<h3>Average CCV</h3>
-										<p>000</p>
+										<p>{stats?.avg}</p>
 								</div>
 								<div className="ccv peak">
 										<h3>Peak CCV</h3>
-										<p>000</p>
+										<p>{stats?.peak}</p>
 								</div>
 							</div>
 						</div>
 						<div className="socials-container">
 								<div className="stat">
 									<img src="/icon/twitter_high.png" alt="" className='icon' />
-									<p className='amount'>1.3 Subscribers</p>
+									<p className='amount'>{stats?.twitter}</p>
 									<p className='name'>Twitter</p>
 								</div>
 								<div className="stat">
 									<img src="/icon/tiktok_high.png" alt="" className='icon' />
-									<p className='amount'>1.3 Subscribers</p>
+									<p className='amount'>{stats?.tiktok}</p>
 									<p className='name'>Tiktok</p>
 								</div>
 								<div className="stat">
 									<img src="/icon/twitch_high.png" alt="" className='icon' />
-									<p className='amount'>1.3 Subscribers</p>
+									<p className='amount'>{stats?.twitch}</p>
 									<p className='name'>Twitch</p>
 								</div>
 								<div className="stat">
 									<img src="/icon/youtube_high.png" alt="" className='icon' />
-									<p className='amount'>1.3 Subscribers</p>
+									<p className='amount'>{stats?.youtube}</p>
 									<p className='name'>Youtube</p>
 								</div>
 						</div>

@@ -19,7 +19,8 @@
 	}
 	
 	font-weight: 300;
-	&:hover{
+	
+	&:hover,&.selected{
 		p{
 			color:#52FF00;
 			text-underline-offset: 3px;

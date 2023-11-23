@@ -3,41 +3,42 @@ import React from 'react'
 
 import './showcase.scss'
 import Button from '@/components/button/button'
+import { fetchData } from '@/db/client';
+import ShowcaseClient from './ShowcaseClient';
+export type ShowcaseServer = {
+  _type: 'document';
+  _id?: string;
+  _rev?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  preset: string;
+  list: Array<{
+    _type: 'object';
+    title: string;
+    media_type: 'image' | 'video';
+    art?: {
+      _type: 'image';
+    };
+    video_id?: string;
+  }>;
+};
 
-export default function Showcase() {
+
+export default async function Showcase() {
+
+	const showcaseData = await fetchData<ShowcaseServer[]>(
+		`*[_type == 'showcase' && preset == 'main']  {
+			_id,
+			_createdAt,
+			_updatedAt,
+			preset,
+			list
+		}`
+	);
 	return (
 		<main id='container_showcase'>
 
-				<section className='model-previewer'>
-					<div className="model-list">
-							<div className="list">
-									<Button text='Phee 1.0'/>
-									<Button text='Phee 2.0'/>
-									<Button text='Phee 3.0'/>
-							</div>
-
-							<div className="decoration">
-										<img src="/gif/esc_skull_99.gif" alt="" className='skull' />
-										<img src="/art/pheesekai-y2k.png" alt="" className='text' />
-							</div>
-					</div>
-					<div className="previewer">
-							<div className="previewer-header">
-								<h2>model-previewer.exe</h2>
-								<img src="/gif/xp-close.png" alt="" />
-							</div>
-							
-							<div className="previewer-body">
-								<div className="model-sheet">
-									<img src="https://pbs.twimg.com/media/F227BJOXoAIvGVC?format=jpg&name=large" alt="" />
-								</div>
-								<div className="model-detail">
-									<img src="/gif/PheeAlert.gif" alt="" />
-									<a href="#">@Artist-Name</a>
-								</div>
-							</div>
-					</div>
-				</section>
+				<ShowcaseClient showcase={showcaseData[0]}/>
 		</main>
 	)
 }

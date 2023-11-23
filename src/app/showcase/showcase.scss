@@ -44,7 +44,6 @@
 		.previewer{
 			// background: #B22A72;
 			border: 5px solid black;
-
 			.previewer-header{
 				display: flex;
 				align-items: center;
@@ -67,13 +66,30 @@
 				}
 			}
 			.previewer-body{
+
 				.model-sheet{
+					min-height: 400px;
+					background-color: black;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.youtube{
+						width: 100%;
+					}
+					iframe{
+						width: 100%;
+						height: 400px;
+						aspect-ratio: 16/9;
+						border: none;
+					}
 					img{
 						max-width: 100%;
 						border: 5px dashed #B22A72;
+						
 					}
 				}
 				.model-detail{
+
 					display: flex;
 					align-items: center;
 					padding: .25em 1em;
