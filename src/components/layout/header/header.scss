@@ -3,6 +3,7 @@
 	box-shadow: 2px 10px 9px rgba(0, 0, 0, 0.74);
 	position: relative;
 	z-index: 4;
+	overflow: hidden;
 	.confine{
 		max-width: 1200px;
 		margin: 0 auto;
@@ -158,4 +159,57 @@
 			scale: 1.2;
 			// filter: hue-rotate(360deg);
 		}
+}
+
+
+
+@media screen and (width <= 1024px) {
+	#header .navigation .confine{
+		flex-wrap: wrap;
+		gap: .45em;
+		justify-content: end;
+	}
+	#header .navigation .links{
+		font-size: 1rem;
+		p{
+			
+			font-size: .8rem;
+		}
+	}
+}
+
+@media screen and (width <= 768px) {
+	#header .navigation .links{
+		// display: grid;
+		flex-wrap: wrap;
+		max-width: 70%;
+	}
+}
+
+@media screen and (width <= 633px) {
+	#header .navigation .links{
+		max-width: 100%;
+	}
+
+}
+
+
+@media screen and (width <= 370px) {
+	#header .header-top .main_logo{
+		max-height: 70px;
+		object-fit: contain;
+		object-position: center;
+		margin-top: 1em;
+	}
+	#header .navigation .confine{
+		justify-content: center;
+		min-width: 0;
+	}
+	#header .navigation .links{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		.button{
+			width: 100%;
+		}
+	}
 }
