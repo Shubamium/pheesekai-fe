@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./sectionTitle.scss";
 
 type SectionTitleProps = {
   title: string;
-  description?: string;
+  description?: string | ReactNode;
 };
 
 export default function SectionTitle({

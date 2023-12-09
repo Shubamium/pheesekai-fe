@@ -1,5 +1,14 @@
 #container_setup{
 	padding-bottom: 200px;
+
+	.section-description p{
+		b{
+			color: #52FF00;
+		}
+		u{
+			color:  blue;
+		}
+	}
 	.setup-section{
 		// background-color: red;
 		.setup{
@@ -212,5 +221,107 @@
 	}
 	100%{
 		background-position: 400px 400px;
+	}
+}
+
+
+
+@media screen and (width <= 768px) {
+	#container_setup .setup-section .setup .art{
+		scale: 1;
+
+		.decor{
+			scale: .6;
+			transform: translateY(-50px);
+		}
+	}
+
+	#container_setup .setup-section .setup .specs .parts-list .parts .type h2{
+		font-size: .8rem;
+	}
+	#container_setup .setup-section .setup .specs .parts-list .parts .parts-name p{
+		font-size: .8rem;
+	}
+	#container_setup .setup-section .setup .specs .parts-list .parts{
+		grid-template-columns: 150px 1fr;
+	}
+	
+}
+
+@media screen and (width <= 624px) {
+	#container_setup .setup-section .setup .art{
+		scale: 1;
+		max-width: 200px;
+	}
+	#container_setup .setup-section .setup{
+		// grid-template-columns: 1fr 1fr;
+		margin-top: 3em;
+		display: flex;
+		align-items: center;
+		// flex-direction: column;
+		flex-direction: column-reverse;
+	}
+	#container_setup .setup-section .setup .specs .decor-pattern{
+		min-height: 100px;
+	}
+	#container_setup .setup-section .setup .specs .spec-title{
+		max-height: 40px;
+	}
+	#container_setup .setup-section .setup{
+		padding: .15em;
+	}
+	#container_setup .peripheral-section .peripherals{
+		// gap: 5em .2em;
+		padding:1em;
+	}
+}
+
+@media screen and (width <= 525px) {
+	#container_setup .peripheral-section .peripherals .peripheral .image{
+		// height:300px;
+		// width: 100px;
+
+	}
+	#container_setup .peripheral-section .peripherals{
+		gap: 3em .5em;
+	}
+	#container_setup .peripheral-section .title{
+		max-height: 50px;
+	}
+	#container_setup .peripheral-section .peripherals .peripheral{
+		max-width: 130px;
+	}
+	#container_setup .peripheral-section .peripherals .peripheral .image .decor{
+		scale: .5;
+		top: -15%;
+		left: 25%;
+	}
+	#container_setup .peripheral-section .peripherals .peripheral .image{
+		height: 180px;
+	}
+	#container_setup .peripheral-section .peripherals .peripheral .detail h2{
+		font-size: .6rem;
+	}
+}
+@media screen and (width <= 375px) {
+	#container_setup .setup-section .setup .specs .parts-list .parts .type{
+		padding: .1em .5em;
+		svg{
+			width: 20px;
+		}
+		h2{
+			font-size: .6rem;
+		}
+	}
+
+	#container_setup .setup-section .setup .specs .parts-list .parts{
+		grid-template-columns: 100px 1fr;
+	}
+	#container_setup .setup-section .setup .specs .parts-list .parts .parts-name p{
+		font-size: .7rem;
+	}
+	#container_setup .setup-section .setup .specs .parts-list .parts .parts-name{
+		opacity: 1;
+
 	}
 }

@@ -15,6 +15,10 @@
 	font-size: 1rem;
 	font-family: 'Times New Roman', monospace;
 	color: #B53B9D;
+	p{
+	color: #B53B9D;
+
+	}
 	padding: 1em;
 	letter-spacing: 2px;
 	max-width: min(780px,90%);
@@ -25,11 +29,18 @@
 	.section-title h2{
 		font-size: 2rem;
 	}
+
+	.section-description{
+		font-size: .9rem;
+	}
 }
 
 @media screen and (width <= 425px) {
 	.section-title h2{
 		font-size: 1.8rem;
 		letter-spacing: 3px;
+	}
+	.section-description{
+		font-size: .8rem;
 	}
 }

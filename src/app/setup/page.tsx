@@ -10,7 +10,11 @@ export default function Games({}) {
       <section className="setup-section">
         <SectionTitle
           title="setup"
-          description=" Listed here are the hardware and software used to help make this channel possible! If you're curious about something listed here, please feel free to ask me in my discord server, or the next time I stream!"
+          description={
+						<p>
+							Listed here are <b className="green">the hardware and software</b> used to help make this channel possible! If {"you're"} curious about something listed here, please <a href="https://discord.gg/GxUEtudmRF" target="_blank" className="pink">feel free to ask me in my discord server</a>, or the next time I stream!
+						</p>
+					}
         />
 
         <div className="setup">
