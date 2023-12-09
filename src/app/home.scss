@@ -112,3 +112,53 @@
 		background-position: 400px 400px;
 	}
 }
+
+@media screen and (width <= 768px) {
+	#container_home .hero-section{
+		display: flex;
+		flex-direction: column-reverse;
+		height: auto;
+	}
+	#container_home .hero-section .hero-art .main-art{
+		left: 30%;
+		// min-height: 5000px;
+		top: 50px;
+		max-height: 300px;
+		margin-bottom: -200px;
+	}
+	#container_home .hero-section .hero-text .hero-logo{
+		z-index: 100;
+		max-width: 100%;
+	}
+	#container_home .hero-section .hero-text{
+		padding-bottom: 5em;
+	}
+	#container_home .hero-section .hero-text .intro{
+		z-index: 100;
+	}
+	#container_home .schedule-section .schedule{
+		padding: 5%;
+		padding-bottom: 200px;
+	}
+}
+
+@media screen and (width <= 425px) {
+	#container_home .hero-section .hero-art .main-art{
+		left: 25%;
+		top: 20px;
+	}
+	#container_home .hero-section .hero-text .intro{
+		font-size: .9rem;
+		margin-top: 1em;
+	}
+
+	#container_home .schedule-section .schedule{
+		padding: 2%;
+		padding-bottom: 200px;
+
+	}
+	#container_home .schedule-section .schedule .schedule-img{
+		border-radius: 1em;
+		border-width: 2px;
+	}
+}

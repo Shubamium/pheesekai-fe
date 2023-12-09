@@ -20,3 +20,16 @@
 	max-width: min(780px,90%);
 	margin: 0 auto;
 }
+
+@media screen and (width <= 768px) {
+	.section-title h2{
+		font-size: 2rem;
+	}
+}
+
+@media screen and (width <= 425px) {
+	.section-title h2{
+		font-size: 1.8rem;
+		letter-spacing: 3px;
+	}
+}
