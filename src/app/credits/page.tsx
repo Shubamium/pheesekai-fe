@@ -93,7 +93,7 @@ export default async function Credits() {
 						</div>
 						<div className="window-body">
 							<div className="pfp">
-									<img src="https://pbs.twimg.com/profile_images/1663178759996952577/DZApEBW2_400x400.jpg" alt="" />
+									<img src="art/tessa.webp" alt="" />
 							</div>
 							<div className="details">
 								<h2 className="name">Tessa</h2>
