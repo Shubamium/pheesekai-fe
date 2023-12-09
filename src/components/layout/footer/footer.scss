@@ -76,3 +76,42 @@
 	}
 	
 }
+
+@media screen and (width <= 768px) {
+	#footer .right-side .decor_brand{
+		display: none;
+	}
+	#footer .right-side .liveclock{
+		// font-size: .6rem;
+		span{
+			display: none;
+		}
+	}
+
+	
+}
+
+@media screen and (width <= 590px) {
+
+	#footer .left-side{
+		gap: 0;
+		flex-direction: row-reverse;
+		justify-content: start;
+		.windows{
+			display: none;
+		}
+	}
+}
+
+
+@media screen and (width <= 425px) {
+	#footer a span{
+		font-weight: bold;
+	}
+	#footer .left-side{
+	}
+	#footer{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}

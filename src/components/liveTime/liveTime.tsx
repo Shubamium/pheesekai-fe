@@ -6,7 +6,7 @@ type Props = {};
 export default function LiveTime({}: Props) {
   return (
     <p className="liveclock">
-      Current Time:{" "}
+      <span>Current Time:{" "}</span>
       <Clock
         blinking={"all"}
         ticking={true}
