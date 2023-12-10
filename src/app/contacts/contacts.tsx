@@ -1,6 +1,6 @@
 'use client'
 import Button from '@/components/button/button'
-import { mutateData } from '@/db/client'
+import { mutateData } from '@/db/mutation'
 import { useRouter } from 'next/navigation'
 import React, { useRef } from 'react'
 
