@@ -41,7 +41,6 @@ export default async function Artworks() {
 			full_height,
 		}
 	`);
-	console.log(artworkData)
 	return (
 		<main id='container_artworks'>
 				<CreditHeader/>
