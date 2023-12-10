@@ -116,7 +116,10 @@
 
 	.guestbook{
 		display: flex;
-		flex-direction: column;
+		// flex-direction: column;
+		flex-wrap: wrap;
+		// align-items: center;
+		justify-content: center;
 		padding: 1em;
 		.guest{
 			background:url('https://e1.pxfuel.com/desktop-wallpaper/850/966/desktop-wallpaper-emo-scene-backgrounds-emo-backgrounds.jpg'),rgba(0, 0, 0, 0.841);
@@ -137,6 +140,7 @@
 			.messages{
 				font-size: 1rem;
 				opacity: 1;
+				max-width: 60ch;
 				transition: all 100ms ease;
 			}
 			.info{
@@ -166,4 +170,92 @@
 			}
 		}
 	}
+}
+
+
+@media screen and (width <= 768px) {
+	#container_contacts .contacts .contact-part .contact-header{
+		gap: 1em;
+		.button p{
+			font-size: .7rem;
+		}
+	}
+}
+
+@media screen and (width <= 565px) {
+	#container_contacts .contacts{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	#container_contacts .contacts .art-part .main-art{
+		max-height: 100%;
+	}
+	#container_contacts .contacts .contact-part .contact-header .actions .button{
+		font-size: .5rem;
+	}
+	#container_contacts .contacts .contact-part .contact-form .messages{
+		height: 100%;
+		min-height: 200px;
+		font-size: 1rem;
+	}
+	#container_contacts .contacts .contact-part .contact-form .self-info .input-1{
+		font-size: .8rem;
+	}
+}
+
+@media screen and (width <= 475px) {
+	#container_contacts .contacts{
+		padding: 1em;
+	}
+	#container_contacts .guestbook .guest .info .username{
+		font-size: .8rem;
+	}
+	#container_contacts .guestbook .guest .info{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#container_contacts .guestbook .guest{
+		margin: .5em;
+	}
+	#container_contacts .guestbook .guest .messages{
+		font-size: .7rem;
+	}
+	#container_contacts .guestbook .guest .info .detail{
+		// display: flex;
+		// flex-direction: column;
+		font-size: .8rem !important;
+	}
+	#container_contacts .guestbook .guest{
+		padding: .45em;
+	}
+}
+
+@media screen and (width <= 375px) {
+	#container_contacts .contacts .contact-part .contact-header .actions{
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+	}
+	#container_contacts .guestbook .guest .info .detail{
+		display: flex;
+		flex-direction: column;
+		font-size: .8rem !important;
+	}
+	#container_contacts .guestbook .guest .info .username{
+		span{
+			display: none;
+		}
+	}
+	#container_contacts .guestbook .guest .info{
+		align-items: start;
+		// display: flex;
+		flex-direction: row;
+	}
+	#container_contacts .guestbook{
+		padding: .25em;
+	}
+
+
 }

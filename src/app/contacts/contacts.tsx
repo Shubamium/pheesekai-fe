@@ -35,7 +35,7 @@ export default function ContactClient() {
 		
 		<form className="contacts" action={"https://formspree.io/f/mayggwwd"} method='POST' ref={formRef}>
 		<div className="art-part">
-				<img src="/art/contact-phee.png" alt="" className='main-art' />
+				<img src="/art/contact-phee.gif" alt="" className='main-art' />
 				<div className="details">
 					<p>pheevtuber@gmail.com</p>
 				</div>
