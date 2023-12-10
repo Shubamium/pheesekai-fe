@@ -68,23 +68,31 @@ export default async function Media() {
 						<div className="socials-container">
 								<div className="stat">
 									<img src="/icon/twitter_high.png" alt="" className='icon' />
-									<p className='amount'>{stats?.twitter}</p>
-									<p className='name'>Twitter</p>
+									<div className="text">
+										<p className='amount'>{stats?.twitter}</p>
+										<p className='name'>Twitter</p>
+									</div>
 								</div>
 								<div className="stat">
 									<img src="/icon/tiktok_high.png" alt="" className='icon' />
-									<p className='amount'>{stats?.tiktok}</p>
-									<p className='name'>Tiktok</p>
+									<div className="text">
+										<p className='amount'>{stats?.tiktok}</p>
+										<p className='name'>Tiktok</p>
+									</div>
 								</div>
 								<div className="stat">
 									<img src="/icon/twitch_high.png" alt="" className='icon' />
-									<p className='amount'>{stats?.twitch}</p>
-									<p className='name'>Twitch</p>
+									<div className="text">
+										<p className='amount'>{stats?.twitch}</p>
+										<p className='name'>Twitch</p>
+									</div>
 								</div>
 								<div className="stat">
 									<img src="/icon/youtube_high.png" alt="" className='icon' />
-									<p className='amount'>{stats?.youtube}</p>
-									<p className='name'>Youtube</p>
+									<div className="text">
+										<p className='amount'>{stats?.youtube}</p>
+										<p className='name'>Youtube</p>
+									</div>
 								</div>
 						</div>
 					</div>
