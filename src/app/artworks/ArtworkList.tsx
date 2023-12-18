@@ -28,7 +28,7 @@ function ArtworkList({artworks}: Props) {
 				<div className='artwork-controls'>
 						<Button onClick={()=>setCurrentPage(Math.max(currentPage-1,0))}><BsArrowLeft/> Prev</Button>
 						<p>{currentPage + 1}</p>
-						<Button onClick={()=>setCurrentPage(Math.min(currentPage+1,chunkedArtworks.length-1))}><BsArrowRight/> Next</Button>
+						<Button onClick={()=>setCurrentPage(Math.min(currentPage+1,chunkedArtworks.length-1))}>Next <BsArrowRight/> </Button>
 					</div>
 
 					<section className='artwork-list'>

@@ -29,4 +29,15 @@
 
 		scale: 1.05;
 	}
+
+	&:active{
+		border-right-color:  #219A77;
+		border-bottom-color:#219A77;
+		border-top-color: #144235;
+		border-left-color:#144235;
+	}
+	&:focus{
+		outline: 2px dotted white;
+		outline-offset: -6px;
+	}
 }
