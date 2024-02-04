@@ -1,6 +1,6 @@
 'use client'
 import Button from '@/components/button/button'
-import { mutateData } from '@/db/mutation'
+// import { mutateData } from '@/db/mutation'
 import { useRouter } from 'next/navigation'
 import React, { useRef } from 'react'
 
@@ -19,13 +19,36 @@ export default function ContactClient() {
 				message:formData.get('Messages'),
 			}
 
+			if(!newGuestbook.name || !newGuestbook.email || !newGuestbook.message) {
+				window.alert('Please fill all of the field before submitting!')
+				return
+			};
 			window.alert('Submitting Guestlist..., Please wait a moment!')
 
-			mutateData('guestbook',newGuestbook).then((doc)=>{
-				if(doc){
-					window.alert('Guest submitted, Thank you for visitting!')
-					router.refresh()
-				}
+			// mutateData('guestbook',newGuestbook).then((doc)=>{
+			// 	if(doc){
+			// 		window.alert('Guest submitted, Thank you for visitting!')
+			// 		router.refresh()
+			// 	}
+			// })
+			fetch('contacts/addguest', {
+				method: 'POST',
+				body:JSON.stringify(newGuestbook)
+			})
+			.then((doc)=>{
+					if(!doc.ok) throw new Error("Hey it's not working")
+					return doc.json()
+			}).then((doc)=>{
+					if(doc){
+						window.alert('Guest submitted, Thank you for visitting!')
+						formRef.current?.reset()
+						router.refresh()
+					}
+			})
+			.catch((err)=>{
+					console.error(err,`hey there's an error`)
+					window.alert('Something went wrong, please try again later!')
+					formRef.current?.reset()
 			})
 		}
 
