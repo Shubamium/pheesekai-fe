@@ -64,11 +64,12 @@ export function Header() {
           {/* Extra Nav Link */}
           <div className="extra-links">
             <a href="https://www.cutercounter.com/" target="_blank">
-              <img
-                src="https://www.cutercounter.com/hits.php?id=hxonkno&nd=6&style=11"
-                alt="best free website hit counter"
-              />
+             
+							<img src="https://www.cutercounter.com/hits.php?id=huxpkkfa&nd=6&style=53"  alt="visitor counter"/>
             </a>
+						{/* <!-- Start of CuterCounter Code --> */}
+					{/* <a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=huxpkkfa&nd=6&style=53"  alt="visitor counter"/></a> */}
+{/* <!-- End of CuterCounter Code --> */}
 
             <Link href={"/contacts#guestbook"}>
               <img src={"/gif/guestbook.webp"} className={"guestbook"} />
