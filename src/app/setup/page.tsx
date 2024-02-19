@@ -1,10 +1,40 @@
+
 import SectionTitle from "@/components/sectionTitle/sectionTitle";
 import "./setup.scss";
 import { GiProcessor } from "react-icons/gi";
 import { BsGpuCard } from "react-icons/bs";
 import { FaMemory } from "react-icons/fa";
 import { BsFillMotherboardFill } from "react-icons/bs";
-export default function Games({}) {
+import { GeneralServer } from "../page";
+import { fetchData, urlFor } from "@/db/client";
+
+type PeripheralServer = GeneralServer & {
+	pc:{
+		gpu:string,
+		processor:string,
+		ram:string,
+		motherboard:string,
+	}
+	peripherals:{
+		item_name:string,
+		item_image:any,
+	}[]
+}
+export default async function Setup({}) {
+
+	const generalData = await fetchData<PeripheralServer[]>(`
+		*[_type == 'general' && preset == 'main'] {
+			_id,
+			_createdAt,
+			_updatedAt,
+			preset,
+			pc,
+			peripherals
+		}
+	
+	`);
+
+	console.log(generalData)
   return (
     <main id="container_setup">
       <section className="setup-section">
@@ -31,7 +61,7 @@ export default function Games({}) {
                   <h2>Processor</h2>
                 </div>
                 <div className="parts-name">
-                  <p>Intel Core i7 11700</p>
+                  <p>{generalData[0].pc.processor}</p>
                 </div>
               </div>
 
@@ -41,7 +71,7 @@ export default function Games({}) {
                   <h2>GPU</h2>
                 </div>
                 <div className="parts-name">
-                  <p>NVIDIA GeForce RTX 3060 Ti</p>
+                  <p>{generalData[0].pc.gpu}</p>
                 </div>
               </div>
 
@@ -51,7 +81,7 @@ export default function Games({}) {
                   <h2>Motherboard</h2>
                 </div>
                 <div className="parts-name">
-                  <p>Gigabyte B560 DS3H AC-Y1</p>
+                  <p>{generalData[0].pc.motherboard}</p>
                 </div>
               </div>
 
@@ -61,7 +91,7 @@ export default function Games({}) {
                   <h2>Ram</h2>
                 </div>
                 <div className="parts-name">
-                  <p>4x NMUD480E82-3000D 8GB</p>
+                  <p>{generalData[0].pc.ram}</p>
                 </div>
               </div>
             </div>
@@ -94,17 +124,22 @@ export default function Games({}) {
 				<img src="/art/section-title_peripherals.png" alt="" className="title" />
 
 				<div className="peripherals">
+						{generalData[0].peripherals.map((per)=>{
+							return <Peripheral name={per.item_name} key={per.item_name} image={urlFor(per.item_image).url()}/>
+						})}
+						{/* <Peripheral name="HTC Vive 3.0 Trackers (x3 for hips and each leg)" image="https://immersive-display.com/img/cms/Blog/self_tracking-tracker_htc_vive.png"/> */}
+
 						{/* PC */}
-						<Peripheral name="Akko Keyboard Kuromi 5108B Plus W/ Crystal Switches" image="https://en.akkogear.com/wp-content/uploads/2022/08/Kuromi-5108B-Plus-SP5.jpg"/>
+						{/* <Peripheral name="Akko Keyboard Kuromi 5108B Plus W/ Crystal Switches" image="https://en.akkogear.com/wp-content/uploads/2022/08/Kuromi-5108B-Plus-SP5.jpg"/>
 						<Peripheral name="Neewer NW-700 Condenser Microphone (Modded by ACEROLAVR)" image="https://images.reverb.com/image/upload/s--XOi3igLZ--/a_0/f_auto,t_large/v1685933791/vs3iczb9ydc52gympicc.jpg"/>
 						<Peripheral name="Presonus Audiobox USB Interface" image="https://pae-web.presonusmusic.com/uploads/products/mediabars/english/images/AudioBox-USB-8.jpg"/>
-						<Peripheral name="Logitech Webcam" image="https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/video-conferencing/c920e/c920e-og-image-new.jpg?v=1"/>
+						<Peripheral name="Logitech Webcam" image="https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/video-conferencing/c920e/c920e-og-image-new.jpg?v=1"/> */}
 
 						{/* Vive */}
-						<Peripheral name="Valve Index" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/HMD_3.jpg"/>
+						{/* <Peripheral name="Valve Index" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/HMD_3.jpg"/>
 						<Peripheral name="Valve Index Controllers" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/CTRL_4.jpg"/>
 						<Peripheral name="HTC Vive 3.0 Trackers (x3 for hips and each leg)" image="https://immersive-display.com/img/cms/Blog/self_tracking-tracker_htc_vive.png"/>
-						<Peripheral name="2.0 Base Stations (x3)" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/BS_3.jpg"/>
+						<Peripheral name="2.0 Base Stations (x3)" image="https://cdn.akamai.steamstatic.com/valvesoftware/images/index/BS_3.jpg"/> */}
 				</div>
 			</section>
 
