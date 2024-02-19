@@ -56,7 +56,11 @@ export default function ContactClient() {
 	}
 	return (
 		
-		<form className="contacts" action={"https://formspree.io/f/mayggwwd"} method='POST' ref={formRef}>
+		<form className="contacts" action={"https://formsubmit.co/a5a74d54c577350a94f3722117bc02bd"} method='POST' ref={formRef}>
+
+			{/* Metadata */}
+			<input type="hidden" name="_subject" value="New contact submission from Pheesekai Website!"></input>
+			<input type="hidden" name="_cc" value="liusvinv@gmail.com"></input>
 		<div className="art-part">
 				<img src="/art/contact-phee.gif" alt="" className='main-art' />
 				<div className="details">
@@ -76,7 +80,7 @@ export default function ContactClient() {
 				<div className="contact-form">
 					<div className="self-info">
 						<input type="text" name="Name" id="Name" placeholder='Name:' className='input-1' required/>
-						<input type="text" name="Email" id="Email" placeholder='Email:' className='input-1' />
+						<input type="email" name="email" id="Email" placeholder='Email:' className='input-1' />
 					</div>
 					<textarea placeholder='Write your messages here!' className='messages' name='Messages' id='Messages' required/>
 					<img src="/gif/arturito-clear.gif" alt="" className='decor-pengu' />
