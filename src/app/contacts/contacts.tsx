@@ -60,7 +60,7 @@ export default function ContactClient() {
 
 			{/* Metadata */}
 			<input type="hidden" name="_subject" value="New contact submission from Pheesekai Website!"></input>
-			<input type="hidden" name="_cc" value="liusvinv@gmail.com"></input>
+			<input type="hidden" name="_cc" value="pheevtuber@gmail.com"></input>
 		<div className="art-part">
 				<img src="/art/contact-phee.gif" alt="" className='main-art' />
 				<div className="details">
