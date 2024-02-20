@@ -7,7 +7,7 @@ import { FaMemory } from "react-icons/fa";
 import { BsFillMotherboardFill } from "react-icons/bs";
 import { GeneralServer } from "../page";
 import { fetchData, urlFor } from "@/db/client";
-
+import { Peripheral } from "@/components/peripheral/Peripheral";
 type PeripheralServer = GeneralServer & {
 	pc:{
 		gpu:string,
@@ -18,6 +18,7 @@ type PeripheralServer = GeneralServer & {
 	peripherals:{
 		item_name:string,
 		item_image:any,
+		item_link:string,
 	}[]
 }
 export default async function Setup({}) {
@@ -125,7 +126,7 @@ export default async function Setup({}) {
 
 				<div className="peripherals">
 						{generalData[0].peripherals.map((per)=>{
-							return <Peripheral name={per.item_name} key={per.item_name} image={urlFor(per.item_image).url()}/>
+							return <Peripheral name={per.item_name} key={per.item_name} image={urlFor(per.item_image).url()} url={per.item_link}/>
 						})}
 						{/* <Peripheral name="HTC Vive 3.0 Trackers (x3 for hips and each leg)" image="https://immersive-display.com/img/cms/Blog/self_tracking-tracker_htc_vive.png"/> */}
 
@@ -147,19 +148,3 @@ export default async function Setup({}) {
   );
 }
 
-
-type PeripheralProps = {
-		image?:string,
-		name:string
-}
-const Peripheral = ({image,name}:PeripheralProps) => {
-	return <div className="peripheral">
-	<div className="image">
-		<img src={image} alt="" className="periph-img"/>
-		<img src="/art/phee_icon.png" alt="" className="decor" />
-	</div>
-	<div className="detail">
-		<h2>{name}</h2>
-	</div>
-</div>	
-}
