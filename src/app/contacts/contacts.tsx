@@ -80,7 +80,7 @@ export default function ContactClient() {
 				<div className="contact-form">
 					<div className="self-info">
 						<input type="text" name="Name" id="Name" placeholder='Name:' className='input-1' required/>
-						<input type="email" name="email" id="Email" placeholder='Email:' className='input-1' />
+						<input type="email" name="Email" id="Email" placeholder='Email:' className='input-1' />
 					</div>
 					<textarea placeholder='Write your messages here!' className='messages' name='Messages' id='Messages' required/>
 					<img src="/gif/arturito-clear.gif" alt="" className='decor-pengu' />
