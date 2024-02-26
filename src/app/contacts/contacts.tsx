@@ -40,7 +40,7 @@ export default function ContactClient() {
 					return doc.json()
 			}).then((doc)=>{
 					if(doc){
-						window.alert('Guest submitted, Thank you for visitting!')
+						window.alert('Guest submitted, Thank you for visiting the site!')
 						formRef.current?.reset()
 						router.refresh()
 					}
