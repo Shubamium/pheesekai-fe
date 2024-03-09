@@ -41,7 +41,7 @@ export default function ShowcaseClient({showcase}: Props) {
 						{
 							showcase.list[active].media_type === 'video' && 
 							<div className="youtube">
-									<iframe {...{modestBranding:true}} width="700" height="315" src="https://www.youtube.com/embed/5Tj8O1kLVAw?si=b8C6cGlcPWNyeZYL" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+									<iframe {...{modestBranding:true}} width="700" height="315" src={`https://www.youtube.com/embed/${showcase.list[active].video_id}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 							</div>
 						}
 					</div>
